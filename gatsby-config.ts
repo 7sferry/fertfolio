@@ -3,6 +3,7 @@ import { data } from "./src/Data";
 import "dotenv/config";
 
 const config: GatsbyConfig = {
+  trailingSlash: "never",
   siteMetadata: {
     title: `Feresume2`,
     siteUrl: `https://ferry.netlify.app`,
@@ -30,11 +31,13 @@ const config: GatsbyConfig = {
         },
       },
     },
-    "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: data.siteConfig.realName,
-        short_name: data.siteConfig.name,
+        short_name: data.siteConfig.realName,
         description: data.siteConfig.description,
         lang: `id`,
         start_url: `/`,
@@ -63,11 +66,14 @@ const config: GatsbyConfig = {
           },
         ],
       },
-    }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
       resolve: "gatsby-source-filesystem",
       options: {
-        "name": "images",
-        "path": "./src/images/",
+        name: "images",
+        path: "./src/images/",
       },
       __key: "images",
     },
