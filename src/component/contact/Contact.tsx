@@ -4,7 +4,6 @@
  ************************/
 
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { data } from "../../Data";
 
 const Contact = () => {
@@ -17,7 +16,7 @@ const Contact = () => {
           {data.contacts.map((contact) => {
             return (
               <a href={contact.url} className="contact-item" target="_blank" key={contact.name}>
-                <FontAwesomeIcon icon={contact.icon} size="lg" color={contact.color} />
+                <contact.icon size={26} color={contact.color} />
                 {contact.name}
               </a>
             );

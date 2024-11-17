@@ -2,8 +2,7 @@
  * Made by [MR Ferry™]  *
  * on November 2024     *
  ************************/
-import { faGithub, faLinkedin, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
-import { faBlog, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
 export const data = {
   siteConfig: {
@@ -27,7 +26,7 @@ export const data = {
   contacts: [
     {
       name: "LinkedIn",
-      icon: faLinkedin,
+      icon: FaLinkedin,
       url: "https://www.linkedin.com/in/7sferry",
       color: "#0a66c2",
     },
@@ -39,25 +38,25 @@ export const data = {
     // },
     {
       name: "Email",
-      icon: faEnvelope,
+      icon: FaEnvelope,
       url: "mailto:7sferry@gmail.com",
       color: "#DB4437",
     },
     {
       name: "Blog",
-      icon: faBlog,
+      icon: FaBlog,
       url: "https://ferry.vercel.app",
       color: "#FF00BF",
     },
     {
       name: "GitHub",
-      icon: faGithub,
+      icon: FaGithub,
       url: "https://github.com/7sferry",
       color: "black",
     },
     {
       name: "StackOverFlow",
-      icon: faStackOverflow,
+      icon: FaStackOverflow,
       url: "https://stackoverflow.com/users/14286378/ferry",
       color: "#ef8236",
     },
