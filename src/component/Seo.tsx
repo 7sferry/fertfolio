@@ -12,7 +12,7 @@ import { data } from "../Data";
  ************************/
 
 export default function Seo() {
-  const cardImagePath = `ferry-suhandri-large2.png`;
+  const cardImagePath = `ferry-suhandri-large2.jpg`;
   return (
     <>
       <html lang={data.lang} />
