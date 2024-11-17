@@ -10,7 +10,7 @@ const Menu = () => {
     <nav>
       <div className="logo">
         <a
-          href="#"
+          href="/#"
           dangerouslySetInnerHTML={{
             __html: logo,
           }}
