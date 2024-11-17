@@ -14,6 +14,7 @@ const Menu = () => {
           dangerouslySetInnerHTML={{
             __html: logo,
           }}
+          aria-label="Home"
         ></a>
       </div>
       <div className="menu-links">
