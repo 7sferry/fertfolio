@@ -137,7 +137,7 @@ export const data = {
     },
     {
       company: `PT. Advotics Teknologi Global`,
-      name: `Delivery Platform`,
+      name: `KPI Platform`,
       from: `Jun 2022`,
       to: `Jun 2023`,
       text: `Created a KPI calculator module for Sales, along with their library to simplify and

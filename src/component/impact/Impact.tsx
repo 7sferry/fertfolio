@@ -14,7 +14,7 @@ const Impact = () => {
         <div className="works">
           {data.impacts.map((impact) => {
             return (
-              <div className="work-entry">
+              <div className="work-entry" key={impact.title}>
                 <h3>{impact.title}</h3>
                 <p>{impact.text}</p>
               </div>

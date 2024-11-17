@@ -14,7 +14,7 @@ const Skill = () => {
         <div className="grid">
           {data.skills.map((skill) => {
             return (
-              <div className="grid-item">
+              <div className="grid-item" key={skill.name}>
                 <div className="content">
                   <h3>
                     {skill.emoji} {skill.name}

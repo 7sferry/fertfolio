@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="contact-links">
           {data.contacts.map((contact) => {
             return (
-              <a href={contact.url} className="contact-item" target="_blank">
+              <a href={contact.url} className="contact-item" target="_blank" key={contact.name}>
                 <FontAwesomeIcon icon={contact.icon} size="lg" color={contact.color} />
                 {contact.name}
               </a>

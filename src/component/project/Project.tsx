@@ -14,7 +14,7 @@ const Project = () => {
         <div className="timeline">
           {data.projects.map((project) => {
             return (
-              <div className="timeline-item">
+              <div className="timeline-item" key={project.name}>
                 <h3>
                   {project.company} - {project.name}
                 </h3>
