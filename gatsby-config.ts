@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         gtagConfig: {
+          head: true,
           anonymize_ip: true,
           cookie_domain: "ferry.netlify.app",
           cookie_flags: "SameSite=None;Secure",

@@ -33,7 +33,7 @@ export default function Seo() {
       <meta name="twitter:image" content={`${data.siteConfig.metaUrl}/${cardImagePath}`} />
       <meta name="twitter:description" content={data.siteConfig.description} />
       <meta name="fb:app_id" content={`708906762920155`} />
-      <meta name="google-site-verification" content={`6RziIE_ZhYMRcSOJtYpoYAYsnqTn0nUbLZS3nXgC2Hw`} />
+      <meta name="google-site-verification" content={`_vePp137T-7MmSzfDlV3zAbJB7941sgDpPP-Z7I5-RY`} />
     </>
   );
 }
