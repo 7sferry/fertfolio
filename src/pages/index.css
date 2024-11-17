@@ -33,6 +33,7 @@ header p {
 
 section {
     padding: 1rem;
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -97,7 +98,6 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
 }
 
 nav {
@@ -170,7 +170,7 @@ nav {
 .timeline-date {
     display: block;
     font-size: 0.9rem;
-    color: #777;
+    color: #525252;
     margin-bottom: 0.5rem;
 }
 
@@ -232,10 +232,6 @@ nav {
 /*    transform: translateY(0);*/
 /*}*/
 
-.impactful-works {
-    background-color: #f9f9f9;
-}
-
 .works {
     margin-top: 1rem;
 }
@@ -266,7 +262,6 @@ nav {
 
 
 .contact {
-    background-color: #f4f4f4;
     text-align: center;
 }
 
@@ -432,7 +427,7 @@ body.dark-mode .work-item p {
         text-align: center;
         width: 225px;
         margin: auto;
-        display: flex;
+        display: flex !important;
     }
 
     .about img {
