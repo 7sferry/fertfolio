@@ -12,6 +12,8 @@ export const data = {
     description:
       "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
     metaUrl: "https://ferry.netlify.app",
+    repo: "7sferry/feresume2",
+    copyright: `© ${new Date().getFullYear()} · Ferry Suhandri`,
   },
   lang: "id",
   about: {
@@ -123,6 +125,12 @@ export const data = {
               needing
               developer intervention.`,
     },
+    {
+      title: "Revolutionizing PDF Creation for Clarity and Ease",
+      text: `Faced with a difficult-to-read PDF creator using OOP style, I migrated the system to an HTML-based
+       solution. This transition simplified the process, allowing future PDF creation tasks to be handled easily by
+        designing layouts with HTML and CSS, just like a webpage, ensuring clarity and flexibility in design.`,
+    },
   ],
   projects: [
     {
@@ -130,69 +138,94 @@ export const data = {
       name: `Delivery Platform`,
       from: `Jul 2023`,
       to: `present`,
-      text: `Developed a Delivery Platform to optimize routing for multiple deliveries, addressing
-              challenges in Fleet Management using WebFlux, Route Management with AWS Lambda, and
-              streamlining Delivery Trip modules.`,
+      text: `Developed a robust Delivery Platform designed to optimize routing for multiple deliveries, effectively
+       addressing complex challenges in Fleet Management through the use of WebFlux. Enhanced the system with dynamic
+        Route Management powered by AWS Lambda and streamlined Delivery Trip modules to ensure efficient logistics
+         operations and scalability. The platform significantly improved delivery efficiency, reduced operational costs,
+          and facilitated seamless fleet coordination.`,
     },
     {
       company: `PT. Advotics Teknologi Global`,
       name: `KPI Platform`,
       from: `Jun 2022`,
       to: `Jun 2023`,
-      text: `Created a KPI calculator module for Sales, along with their library to simplify and
-              accelerate development.`,
+      text: `Created a comprehensive KPI calculator module for Sales, designed to accurately track and evaluate
+       performance metrics. Developed an accompanying library to simplify implementation and accelerate future
+        development processes, ensuring consistent functionality and reducing development overhead. This solution
+         enhanced data accuracy, streamlined reporting, and provided developers with reusable, modular tools for
+          efficient integration into various projects.`,
     },
     {
       company: `PT. Advotics Teknologi Global`,
       name: `Business Transaction Platform`,
       from: `Sep 2019`,
       to: `Present`,
-      text: `Developed the core of supply chain applications including Ordering, Invoice,
-              Product Return, and Inventory modules using Spring Boot, Hibernate, Clean Architectures.`,
+      text: `Developed the backbone of supply chain applications, including critical modules for Ordering, Invoice,
+       Product Return, and Inventory management. Leveraged Spring Boot and Hibernate to build scalable and efficient
+        systems, while implementing Clean Architecture principles to ensure maintainability, modularity, and clarity.
+         These enhancements streamlined operations, improved data accuracy, and facilitated seamless integration across
+          the supply chain ecosystem.`,
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
       name: `Permodalan Nasional Madani Investment Management`,
       from: `May 2019`,
       to: `Aug 2019`,
-      text: `Developed an Investment Management System using Groovy and Grails.`,
+      text: `Faced with a tight deadline to develop a Mutual Funds app for Permodalan Nasional Madani Investasi Management,
+       I collaborated with the team despite none of us having prior experience with Groovy or Grails. We embraced the
+        challenge by learning Groovy and Grails on the go while actively developing the application. Despite the steep
+         learning curve, we successfully launched the app, delivering it on time and meeting the project’s requirements.`,
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
       name: `Alfacart Back Office`,
       from: `Dec 2018`,
       to: `Apr 2019`,
-      text: `Developed the Alfacart Back Office application as a full-stack using Java and vanilla
-              JavaScript.`,
+      text: `Deployed to replace a colleague at Alfacart, I was tasked with improving their back office apps as a
+       full-stack solution, utilizing Java for backend processes and vanilla JavaScript for the frontend interface.
+        One challenge involved implementing a discount period feature that couldn’t overlap. Upon reviewing the
+         database, I discovered PostgreSQL’s "overlap" keyword, which allowed me to simplify the logic significantly.
+          By leveraging this feature, I eliminated the need for complex manual checks, resulting in a cleaner and more
+           efficient query for handling overlapping discount periods.`,
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
       name: `Ultra Voucher`,
       from: `Oct 2018`,
       to: `Nov 2018`,
-      text: `Developed a Split Payments API for Ultra Voucher using Java, Spring, and MyBatis.`,
+      text: `Assigned to assist Ultra Voucher, a newly formed startup, I worked with Java, Spring, and MyBatis to
+       implement a feature that allowed customers to make multiple payments for a single product. This feature enabled
+        customers to divide their payments across multiple payment accounts, offering greater flexibility and
+         convenience. I successfully delivered the solution on time, enhancing the user experience and streamlining the
+          payment process for the platform.`,
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
       name: `Novo Nordisk Indonesia`,
       from: `Jun 2018`,
       to: `Sep 2018`,
-      text: `Developed a web service API for the sales dashboard and analytics for Novo Nordisk.`,
+      text: `Designed and developed a web service API for Novo Nordisk's sales dashboard and analytics platform,
+       enabling data visualization and insights. The API streamlined data processing, and enhanced reporting accuracy.
+       Despite some significant adjustments on-the-go, we swiftly adapted by modifying the code and database, ensuring
+        that the solution met the updated needs`,
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
       name: `Betterway`,
       from: `Jan 2018`,
       to: `May 2018`,
-      text: `Developed a web service API for a mobile e-commerce platform based in the Philippines.`,
+      text: `For our client Betterway from the Philippines, I collaborated with my team to develop a mobile e-commerce
+       app within a 5-month timeline. Despite the challenges, we maintained a strong focus on quality and functionality
+        throughout the development process. The project culminated in a successful product launch, with the app going
+         live as planned.`,
     },
     {
       company: `PT. Indivara Sejahtera Sukses Makmur`,
-      name: `On Job Trainee`,
+      name: `Java Development Trainee`,
       from: `Aug 2017`,
       to: `Dec 2017`,
       text: `Completed intensive training in both soft and hard skills, with a focus on Java, its
-              frameworks, and the latest technologies, ranging from basic to advanced levels. I also
+              frameworks, basic JavaScript, and the latest technologies, ranging from basic to advanced levels. I also
               undertook on-the-job training as a graduate programmer. During this time, I deepened my
               understanding of Design Patterns and advanced my knowledge of various coding principles.`,
     },
@@ -238,7 +271,7 @@ export const data = {
     },
     {
       emoji: `🔍`,
-      name: `Attention to Detail`,
+      name: `Detail-Oriented`,
       text: `My meticulous attention to detail ensures that every aspect of a project, from initial
                 design to final testing, adheres to the highest quality standards. I consistently refine
                 and optimize each element, ensuring flawless execution and delivering exceptional
