@@ -441,7 +441,7 @@ body.dark-mode .work-item p {
     .menu-links.show {
         display: flex;
         margin-right: 0;
-        height: 150px;
+        padding-bottom: 1rem;
     }
 
     .burger {
