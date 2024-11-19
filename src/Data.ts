@@ -139,7 +139,7 @@ export const data = {
       from: `Jul 2023`,
       to: `present`,
       text: `Developed a robust Delivery Platform designed to optimize routing for multiple deliveries, effectively
-       addressing complex challenges in Fleet Management through the use of WebFlux. Enhanced the system with dynamic
+       addressing complex challenges solving Traveling Salesman Problems in Fleet Management through the use of WebFlux. Enhanced the system with dynamic
         Route Management powered by AWS Lambda and streamlined Delivery Trip modules to ensure efficient logistics
          operations and scalability. The platform significantly improved delivery efficiency, reduced operational costs,
           and facilitated seamless fleet coordination.`,
