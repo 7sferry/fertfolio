@@ -4,34 +4,24 @@
  ************************/
 
 import React from "react";
+import { data } from "../../Data";
 
 function Personality() {
   return (
     <section id="personality" className="section">
       <div className="container">
-        <h2 className="">My Personality</h2>
+        <h2 className="">Personality Traits</h2>
         <div className="personality-grid">
-          <div className="personality-item">
-            <h3 className="personality-heading">ISTJ (Myers-Briggs)</h3>
-            <p className="personality-description">
-              Methodical, detail-oriented, and precise, I approach problems with logical and structured solutions.
-            </p>
-          </div>
-          <div className="personality-item">
-            <h3 className="personality-heading">Type 5 (Enneagram)</h3>
-            <p className="personality-description">
-              A thinker and learner, I thrive on acquiring knowledge, diving deep into complex topics to understand and
-              innovate.
-            </p>
-          </div>
-          <div className="personality-item">
-            <h3 className="personality-heading">Conscientious (DiSC)</h3>
-            <p className="personality-description">
-              Analytical and focused, I prioritize efficiency and clarity, delivering solutions that are effective and
-              sustainable.
-            </p>
-          </div>
+          {data.personalities.map((personality) => {
+            return (
+              <div className="personality-item" key={personality.title}>
+                <h3 className="personality-heading">{personality.title}</h3>
+                <p className="personality-description">{personality.text}</p>
+              </div>
+            );
+          })}
         </div>
+        ;{" "}
       </div>
     </section>
   );

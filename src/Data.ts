@@ -7,7 +7,7 @@ import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react
 export const data = {
   siteConfig: {
     realName: "Ferry Suhandri",
-    role: "Software Engineer",
+    role: "Software Development Engineer III",
     tagline: "Crafting code, shaping solutions",
     description:
       "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
@@ -17,7 +17,7 @@ export const data = {
   },
   lang: "id",
   about: {
-    text: `I'm a software engineer who thrives on crafting elegant, efficient solutions. With expertise
+    text: `I'm a Software Engineer who thrives on crafting elegant, efficient solutions. With expertise
           in Java, Spring Boot, Hibernate, SQL, and OOP, I transform complex code into clean,
           maintainable art. Unit testing? Absolutely, I believe in bulletproofing code to keep it
           reliable. I’m constantly learning and researching to stay ahead of the curve. My
@@ -130,6 +130,27 @@ export const data = {
       text: `Faced with a difficult-to-read PDF creator using OOP style, I migrated the system to an HTML-based
        solution. This transition simplified the process, allowing future PDF creation tasks to be handled easily by
         designing layouts with HTML and CSS, just like a webpage, ensuring clarity and flexibility in design.`,
+    },
+  ],
+  personalities: [
+    {
+      title: `ISTJ (Myers-Briggs)`,
+      text: `Methodical, detail-oriented, and precise, I approach problems with logical and structured solutions.`,
+    },
+    {
+      title: `Type 5 (Enneagram)`,
+      text: `A thinker and learner, I thrive on acquiring knowledge, diving deep into complex topics to understand and
+              innovate.`,
+    },
+    {
+      title: `Conscientious (DiSC)`,
+      text: `Analytical and focused, I prioritize efficiency and clarity, delivering solutions that are effective and
+              sustainable.`,
+    },
+    {
+      title: `Big Five`,
+      text: `Openness: 37%, Conscientiousness: 81%, Extraversion: 3%, Agreeableness: 3%, Neuroticism: 57%. A balance of
+       thoughtfulness, diligence, and introspection.`,
     },
   ],
   projects: [
