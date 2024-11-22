@@ -387,8 +387,8 @@ body.dark-mode .work-item p {
 /* Personality Section Styles */
 .personality-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 55px;
     margin: 1rem auto;
 }
 
@@ -446,6 +446,10 @@ body.dark-mode .work-item p {
 
     .burger {
         display: flex;
+    }
+
+    .personality-grid {
+        gap: 20px;
     }
 }
 
