@@ -1,8 +1,8 @@
 {
-  "name": "feresume2",
+  "name": "fertfolio",
   "version": "1.0.0",
   "private": false,
-  "description": "feresume2",
+  "description": "My Portfolio Website",
   "author": "MR Ferry",
   "keywords": [
     "gatsby",

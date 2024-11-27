@@ -12,7 +12,7 @@ export const data = {
     description:
       "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
     metaUrl: "https://ferry.netlify.app",
-    repo: "7sferry/feresume2",
+    repo: "7sferry/fertfolio",
     copyright: `© ${new Date().getFullYear()} · Ferry Suhandri`,
   },
   lang: "id",
@@ -256,7 +256,7 @@ export const data = {
       emoji: `👨‍💻`,
       name: `Programming`,
       text: `I primarily work with Java in my projects, but I also have experience with
-                JavaScript/TypeScript. To me, programming languages or frameworks are tools; I'm always
+                JavaScript/TypeScript. To me, programming languages or frameworks are just tools; I'm always
                 open and eager to learn and master new ones as needed.`,
     },
     {
