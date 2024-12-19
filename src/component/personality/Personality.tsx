@@ -21,7 +21,6 @@ function Personality() {
             );
           })}
         </div>
-        ;{" "}
       </div>
     </section>
   );
