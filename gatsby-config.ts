@@ -21,19 +21,6 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-catch-links",
     {
-      resolve: `gatsby-omni-font-loader`,
-      options: {
-        enableListener: true,
-        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
-        web: [
-          {
-            name: `PT Sans Caption`,
-            file: `https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap`,
-          },
-        ],
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [
