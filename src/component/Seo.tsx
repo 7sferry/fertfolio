@@ -17,6 +17,12 @@ export default function Seo() {
     <>
       <html lang={data.lang} />
       <title>{data.siteConfig.realName}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"anonymous"} />
+      <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+      />
       <meta name="description" content={data.siteConfig.description} />
       <meta name="og:title" content={data.siteConfig.realName} />
       <meta name="og:description" content={data.siteConfig.description} />
