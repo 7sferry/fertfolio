@@ -2,13 +2,15 @@
  * Made by [MR Ferry™]  *
  * on November 2024     *
  ************************/
-/*@media (prefers-reduced-motion: no-preference) {*/
-/*    :root {*/
-/*        scroll-behavior: smooth;*/
-/*    }*/
-/*}*/
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
 body {
-    font-family: 'PT Sans Caption', serif;
+    font-family: serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
