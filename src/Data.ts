@@ -13,7 +13,6 @@ export const data = {
       "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
     metaUrl: "https://ferry.netlify.app",
     repo: "7sferry/fertfolio",
-    copyright: `© ${new Date().getFullYear()} · Ferry Suhandri`,
   },
   lang: "id",
   about: {
@@ -134,13 +133,9 @@ export const data = {
   ],
   personalities: [
     {
-      title: `ISTJ (Myers-Briggs)`,
-      text: `Methodical, detail-oriented, and precise, I approach problems with logical and structured solutions.`,
-    },
-    {
-      title: `Type 5 (Enneagram)`,
-      text: `A thinker and learner, I thrive on acquiring knowledge, diving deep into complex topics to understand and
-              innovate.`,
+      title: `Big Five`,
+      text: `Openness: 37%, Conscientiousness: 81%, Extraversion: 3%, Agreeableness: 3%, Neuroticism: 57%. A balance of
+       thoughtfulness, diligence, and introspection.`,
     },
     {
       title: `Conscientious (DiSC)`,
@@ -148,9 +143,13 @@ export const data = {
               sustainable.`,
     },
     {
-      title: `Big Five`,
-      text: `Openness: 37%, Conscientiousness: 81%, Extraversion: 3%, Agreeableness: 3%, Neuroticism: 57%. A balance of
-       thoughtfulness, diligence, and introspection.`,
+      title: `ISTJ (Myers-Briggs)`,
+      text: `Methodical, detail-oriented, and precise, I approach problems with logical and structured solutions.`,
+    },
+    {
+      title: `Type 5 (Enneagram)`,
+      text: `A thinker and learner, I thrive on acquiring knowledge, diving deep into complex topics to understand and
+              innovate.`,
     },
   ],
   projects: [

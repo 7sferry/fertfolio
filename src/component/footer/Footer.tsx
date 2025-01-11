@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        &copy; 2024 {data.siteConfig.realName} | {data.footer.text}
+        &copy; 2025 {data.siteConfig.realName} | {data.footer.text}
       </p>
     </footer>
   );
