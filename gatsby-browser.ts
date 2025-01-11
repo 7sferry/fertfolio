@@ -3,4 +3,4 @@
  * on Januari 2025      *
  ************************/
 
-import "@fontsource/pt-sans-caption";
+// import "@fontsource/pt-sans-caption";
