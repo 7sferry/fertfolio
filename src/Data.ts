@@ -7,7 +7,7 @@ import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react
 export const data = {
   siteConfig: {
     realName: "Ferry Suhandri",
-    role: "Software Development Engineer III",
+    role: "Software Development Engineer",
     tagline: "Crafting code, shaping solutions",
     description:
       "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
@@ -56,7 +56,7 @@ export const data = {
       color: "black",
     },
     {
-      name: "StackOverFlow",
+      name: "StackOverflow",
       icon: FaStackOverflow,
       url: "https://stackoverflow.com/users/14286378/ferry",
       color: "#ef8236",
@@ -83,6 +83,11 @@ export const data = {
               transaction isolation levels. These efforts successfully eliminated the anomalies, ensuring
               data
               consistency and reliability throughout the system.`,
+    },
+    {
+      title: "Elevating API Efficiency with Reactive Refactoring",
+      text: `Identified a severed API performance bottlenecks. I resolved it by transforming sluggish query and heavy 
+      blocking calls into efficient non-blocking processes. Slashing response times from over a minute to under a second`,
     },
     {
       title: "Customizable Client Behaviors with Design Patterns",
