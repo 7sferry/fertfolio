@@ -17,6 +17,7 @@ const getPhotoBio = (): IGatsbyImageData => {
             layout: CONSTRAINED
             outputPixelDensities: [1]
             width: 225
+            height: 225
           )
         }
       }
