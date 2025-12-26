@@ -87,11 +87,11 @@ export const data = {
     {
       title: "Elevating API Efficiency with Reactive Refactoring",
       text: `Identified a severed API performance bottlenecks. I resolved it by transforming sluggish query and heavy 
-      blocking calls into efficient non-blocking processes. Slashing response times from over a minute to under a second`,
+      blocking calls into efficient non-blocking processes. Slashing response times from 60s+ to <1s`,
     },
     {
       title: "Customizable Client Behaviors with Design Patterns",
-      text: `Faced with the challenge of diverse client behavior requirements, I implemented design
+      text: `Dealt with the challenge of diverse client behavior requirements, I implemented design
               patterns
               such as Strategy, Command, and Factory Method. This solution provided each client with the
               flexibility to choose and utilize their desired behavior seamlessly.`,
@@ -118,20 +118,16 @@ export const data = {
               code
               to use dependency injection, making it easier to mock dependencies in unit tests and
               improving
-              testability and maintainability.`,
+              testability & maintainability and increasing code coverages >90%.`,
     },
     {
-      title: "Automating Query Logging for QA with AOP",
-      text: `To streamline the testing process for the QA team, I developed an AOP-based solution that
-              intercepts query generation outside of business logic and sends the query logs directly to
-              their
-              email. This approach enables QA to access the generated queries independently, without
-              needing
-              developer intervention.`,
+      title: "Improving ETL & Analytics",
+      text: `Previous sales dashboard took longer to response. I rebuild the ETL pipelines using pre-aggregating data.
+       It boosted dashboard performance for 100k+ records over year, delivering analytics with near-instant responsiveness.`,
     },
     {
       title: "Revolutionizing PDF Creation for Clarity and Ease",
-      text: `Faced with a difficult-to-read PDF creator using OOP style, I migrated the system to an HTML-based
+      text: `Maintained a difficult-to-read PDF creator using OOP style, I migrated the system to an HTML-based
        solution. This transition simplified the process, allowing future PDF creation tasks to be handled easily by
         designing layouts with HTML and CSS, just like a webpage, ensuring clarity and flexibility in design.`,
     },
@@ -174,7 +170,7 @@ export const data = {
       name: `KPI Platform`,
       from: `Jun 2022`,
       to: `Jun 2023`,
-      text: `Created a comprehensive KPI calculator module for Sales, designed to accurately track and evaluate
+      text: `Enhanced a comprehensive KPI calculator module for Sales, designed to accurately track and evaluate
        performance metrics. Developed an accompanying library to simplify implementation and accelerate future
         development processes, ensuring consistent functionality and reducing development overhead. This solution
          enhanced data accuracy, streamlined reporting, and provided developers with reusable, modular tools for
@@ -185,7 +181,7 @@ export const data = {
       name: `Business Transaction Platform`,
       from: `Sep 2019`,
       to: `Present`,
-      text: `Developed the backbone of supply chain applications, including critical modules for Ordering, Invoice,
+      text: `Built the backbone of supply chain applications, including critical modules for Ordering, Invoice,
        Product Return, and Inventory management. Leveraged Spring Boot and Hibernate to build scalable and efficient
         systems, while implementing Clean Architecture principles to ensure maintainability, modularity, and clarity.
          These enhancements streamlined operations, improved data accuracy, and facilitated seamless integration across
@@ -269,7 +265,7 @@ export const data = {
       text: `Driven by curiosity and a passion for innovation, I constantly seek
                 opportunities to expand my knowledge and apply cutting-edge solutions to improve
                 software development. This proactive approach ensures I stay ahead of trends and
-                contribute valuable insights to any team.`,
+                share valuable insights to any team.`,
     },
     {
       emoji: `🧪`,
