@@ -85,6 +85,11 @@ export const data = {
               consistency and reliability throughout the system.`,
     },
     {
+      title: "Migrating messaging queue infrastructure",
+      text: `Previous messaging infrastructure was AWS SQS, charged per-request by AWS. I migrated it to Redis Stream.
+      This reduced infrastructure cost from per-request charges to our dedicated Redis instance`,
+    },
+    {
       title: "Elevating API Efficiency with Reactive Refactoring",
       text: `Identified a severed API performance bottlenecks. I resolved it by transforming sluggish query and heavy 
       blocking calls into efficient non-blocking processes. Slashing response times from 60s+ to <1s`,
