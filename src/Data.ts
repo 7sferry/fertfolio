@@ -85,7 +85,7 @@ export const data = {
               consistency and reliability throughout the system.`,
     },
     {
-      title: "Migrating messaging queue infrastructure",
+      title: "Migrating Messaging Queue Infrastructure",
       text: `Previous messaging infrastructure was AWS SQS, charged per-request by AWS. I migrated it to Redis Stream.
       This reduced infrastructure cost from per-request charges to our dedicated Redis instance`,
     },
