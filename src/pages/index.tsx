@@ -15,13 +15,15 @@ function IndexPage() {
   return (
     <>
       <Menu />
-      <Header />
-      <About />
-      <Skill />
-      <Project />
-      <Impact />
-      <Personality />
-      <Contact />
+      <main>
+        <Header />
+        <About />
+        <Skill />
+        <Project />
+        <Impact />
+        <Personality />
+        <Contact />
+      </main>
       <Footer />
       {/*<DarkModeToggle/>*/}
     </>
