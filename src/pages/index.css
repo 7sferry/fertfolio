@@ -154,7 +154,7 @@ nav {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin: 1.5rem 0 2.5rem;
     padding-left: 1rem;
 }
 
@@ -165,19 +165,83 @@ nav {
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: -10px;
-    top: 10px;
-    width: 10px;
-    height: 10px;
-    background-color: #2C3E50;
+    left: -27px;
+    top: 0.55rem;
+    width: 14px;
+    height: 14px;
+    background-color: #0093b1;
+    border: 3px solid #f4f4f4;
     border-radius: 50%;
 }
 
-.timeline-date {
-    display: block;
-    font-size: 0.9rem;
-    color: #525252;
-    margin-bottom: 0.5rem;
+.experience-header,
+.project-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+}
+
+.experience-company {
+    font-size: 1.4rem;
+    color: #2C3E50;
+    margin: 0;
+}
+
+.experience-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2C3E50;
+    background-color: #e3eaf0;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.experience-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0093b1;
+    margin: 0.2rem 0 0;
+}
+
+.experience-summary {
+    color: #333;
+    margin: 0.5rem 0 0;
+}
+
+.experience-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.timeline-project {
+    background-color: #ffffff;
+    border-left: 3px solid #0093b1;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.project-name {
+    font-size: 1rem;
+    color: #34495E;
+    margin: 0;
+}
+
+.project-date {
+    font-size: 0.8rem;
+    color: #6b6b6b;
+    white-space: nowrap;
+}
+
+.project-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.35rem 0 0;
 }
 
 
@@ -390,38 +454,13 @@ body.dark-mode .work-item p {
     color: #ddd;
 }
 
-/* Personality Section Styles */
-.personality-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 55px;
-    margin: 1rem auto;
+body.dark-mode .timeline-project {
+    background-color: #444;
 }
 
-.personality-item {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.personality-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.personality-heading {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #34495E;
-}
-
-.personality-description {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
+body.dark-mode .experience-company,
+body.dark-mode .project-name {
+    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -454,8 +493,12 @@ body.dark-mode .work-item p {
         display: flex;
     }
 
-    .personality-grid {
-        gap: 20px;
+    .timeline-item {
+        padding-left: 0.5rem;
+    }
+
+    .timeline-project {
+        padding: 0.75rem;
     }
 }
 

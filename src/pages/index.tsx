@@ -17,9 +17,9 @@ function IndexPage() {
       <main>
         <Header />
         <About />
-        <Skill />
         <Project />
         <Impact />
+        <Skill />
         <Contact />
       </main>
       <Footer />

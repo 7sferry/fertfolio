@@ -19,9 +19,9 @@ const Menu = () => {
       </div>
       <div className="menu-links">
         <a href="#about-me">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#impact">Impact</a>
+        <a href="#projects">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#contact-me">Contact</a>
       </div>
       <div className="burger" onClick={toggleMenu}>

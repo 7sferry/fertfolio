@@ -7,8 +7,8 @@ import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react
 export const data = {
   siteConfig: {
     realName: "Ferry Suhandri",
-    role: "Senior Associate Software Development Engineer",
-    tagline: "Java backend · supply-chain & delivery routing · data consistency · performance",
+    role: "Senior Software Development Engineer",
+    tagline: "Java backend · supply-chain & delivery routing · data consistency · SaaS multitenancy",
     description:
       "Ferry Suhandri, Java backend engineer: supply-chain transaction systems, delivery route optimization with jsprit, concurrency fixes and performance work. Senior Associate Software Development Engineer at NTT DATA.",
     metaUrl: "https://ferry.netlify.app",
@@ -16,10 +16,9 @@ export const data = {
   },
   lang: "en",
   about: {
-    text: `Java backend engineer, currently Senior Associate Software Development Engineer at NTT DATA (since September
-          2026). Before that I spent nearly seven years at Advotics building supply-chain systems (ordering, invoicing,
+    text: `Java backend engineer, currently Senior Associate Software Development Engineer at NTT DATA. Before that I spent nearly seven years at Advotics building supply-chain systems (ordering, invoicing,
           returns, inventory) and, on my own, rewrote its delivery-routing engine using jsprit, AWS Lambda and Spring
-          WebFlux. I also reviewed code and mentored 3–5 junior engineers there. My best work is making existing systems
+          WebFlux. I also reviewed code and mentored junior engineers there. My best work is making existing systems
           correct and fast: fixing lost-update and write-skew anomalies, cutting a 60s+ API to under 1s by removing N+1
           queries and blocking calls, and introducing a >90% unit-test coverage bar for new endpoints that became the
           team standard.`,
@@ -65,7 +64,7 @@ export const data = {
   impacts: [
     {
       title: "Rewrote Delivery Routing as a Standalone Engine",
-      text: `Rewrote the delivery-plan routing out of the legacy delivery service, working alone. A planner picks 100–300
+      text: `Rewrote the delivery-plan routing out of the legacy delivery service. A planner picks 100–300
           orders, and the engine assigns them to vehicles and orders the stops using jsprit. One vehicle can pick up from
           several warehouses and deliver to several customers, within customer time windows and vehicle-skill
           constraints. The solver and distance-matrix building run on AWS Lambda when the planner clicks Generate,
@@ -87,8 +86,7 @@ export const data = {
     {
       title: "Fixed Lost Updates and Write Skew",
       text: `Concurrent requests were causing lost updates and write skew, which led to inconsistent data. I made
-          optimistic locking with version columns the default for lost updates. For the write-skew cases in the Delivery
-          Platform, where conflicts were frequent, I used SERIALIZABLE isolation instead. The anomalies stopped.`,
+          optimistic locking with version columns the default for lost updates. For the write-skew cases where conflicts were frequent, I used SERIALIZABLE isolation instead. The anomalies stopped.`,
     },
     {
       title: "Built a Custom Transaction Manager with Spring AOP",
@@ -110,7 +108,7 @@ export const data = {
     {
       title: "Refactored Legacy Code to a Modular Structure",
       text: `Refactored hard-to-maintain legacy modules with centralized exception handling, request validation,
-          programming to interfaces and dependency injection.`,
+          programming to interfaces and dependency injection. We also implemented Clean Architecture.`,
     },
     {
       title: "Per-Client Behavior with Design Patterns",
@@ -132,15 +130,14 @@ export const data = {
       title: `Software Development Engineer`,
       from: `Sep 2019`,
       to: `Jun 2026`,
-      summary: `Reviewed code and mentored 3–5 junior engineers. Introduced a >90% unit-test coverage bar for new endpoints
-          that became the team standard.`,
+      summary: `Introduced a >90% unit-test coverage bar for new endpoints
+          that became the team standard. Reviewed code and mentored junior engineers.`,
       projects: [
         {
           name: `Delivery Platform`,
           from: `Jul 2023`,
           to: `Jun 2026`,
-          text: `Rewrote the delivery-plan routing out of the legacy delivery service into a standalone engine, working
-              alone. It uses jsprit on AWS Lambda for vehicle routing with multiple vehicles, warehouses, time windows and
+          text: `Rewrote the delivery-plan routing out of the legacy delivery service into a standalone engine. It uses jsprit on AWS Lambda for vehicle routing with multiple vehicles, warehouses, time windows and
               vehicle skills, and Spring WebFlux for the data-loading API, which I cut from 60s+ to under 1s. Also built
               the Delivery Trip module.`,
         },
@@ -231,7 +228,7 @@ export const data = {
     {
       emoji: `🗄️`,
       name: `Data & Messaging`,
-      text: `PostgreSQL, Redis Streams, AWS SQS, transaction isolation and locking, ETL pre-aggregation.`,
+      text: `PostgreSQL, MySQL, Redis Streams, AWS SQS, transaction isolation and locking, ETL.`,
     },
     {
       emoji: `☁️`,
@@ -240,13 +237,9 @@ export const data = {
     },
     {
       emoji: `🧪`,
-      name: `Testing`,
-      text: `JUnit, Mockito, dependency injection for testability, >90% coverage on new endpoints.`,
-    },
-    {
-      emoji: `🛠️`,
-      name: `Design`,
-      text: `Design patterns (Strategy, Command, Factory Method), clean architecture, refactoring legacy code.`,
+      name: `Testing & Code Quality`,
+      text: `JUnit, Mockito, >90% coverage on new endpoints, design patterns (Strategy, Command, Factory Method),
+          refactoring legacy code.`,
     },
     {
       emoji: `🌍`,

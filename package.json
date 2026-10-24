@@ -12,7 +12,7 @@
     "suhandri"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8001",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",

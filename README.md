@@ -1,49 +1,43 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# fertfolio
 
-## 🚀 Quick start
+Source of [ferry.netlify.app](https://ferry.netlify.app), the online CV of Ferry Suhandri, a Java backend engineer.
 
-1.  **Create a Gatsby site.**
+## Stack
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+- [Gatsby 5](https://www.gatsbyjs.com/) with React 18 and TypeScript
+- `gatsby-plugin-image` / `sharp` for images, `gatsby-plugin-sitemap`, `gatsby-plugin-manifest`, `gatsby-plugin-purgecss`
+- Google Analytics via `gatsby-plugin-google-gtag`
+- Deployed on Netlify (`gatsby-adapter-netlify`)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+## Structure
 
-2.  **Start developing.**
+```
+src/
+  Data.ts              all page content: header, about, impacts, experiences, skills, contacts, footer
+  pages/index.tsx      section order
+  pages/index.css      styles
+  component/           one component per section, each renders its slice of Data.ts
+  component/Seo.tsx    meta tags, Open Graph and schema.org Person data
+gatsby-config.ts       site metadata and plugins, also read from Data.ts
+static/                files served as-is (social card images, site verification)
+```
 
-    Navigate into your new site’s directory and start it up.
+Content changes only touch `src/Data.ts`. Components never hard-code CV text.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Development
 
-3.  **Open the code and start customizing!**
+```shell
+bun install          # or npm install
+cp .env.EXAMPLE .env # set ANALYTICS_MEASUREMENT_ID
+bun run develop      # http://localhost:8001
+bun run typecheck
+bun run build
+```
 
-    Your site is now running at http://localhost:8000!
+## Deployment
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+Netlify builds `main` with `gatsby build`. `netlify.toml` redirects `/resume` to `/`.
 
-4.  **Learn more**
+## License
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+See [LICENSE](LICENSE).

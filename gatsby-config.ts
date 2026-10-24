@@ -47,7 +47,7 @@ const config: GatsbyConfig = {
         name: data.siteConfig.realName,
         short_name: data.siteConfig.realName,
         description: data.siteConfig.description,
-        lang: `id`,
+        lang: data.lang,
         start_url: `/`,
         background_color: `#0093b1`,
         theme_color: `#34495E`,
