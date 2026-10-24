@@ -1,6 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
 import { data } from "./src/Data";
-import "dotenv/config";
 
 const config: GatsbyConfig = {
   trailingSlash: "never",
@@ -19,26 +18,6 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-catch-links",
-    {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: [
-          // process.env.ANALYTICS_GA4, // Google Analytics / GA
-          process.env.ANALYTICS_MEASUREMENT_ID, // Google Analytics / GA
-          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_domain: "ferry.netlify.app",
-          cookie_flags: "SameSite=None;Secure",
-          cookie_expires: 360 * 24 * 60 * 60,
-        },
-        pluginConfig: {
-          head: true,
-        },
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {

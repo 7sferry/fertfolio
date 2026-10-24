@@ -6,7 +6,6 @@ Source of [ferry.netlify.app](https://ferry.netlify.app), the online CV of Ferry
 
 - [Gatsby 5](https://www.gatsbyjs.com/) with React 18 and TypeScript
 - `gatsby-plugin-image` / `sharp` for images, `gatsby-plugin-sitemap`, `gatsby-plugin-manifest`, `gatsby-plugin-purgecss`
-- Google Analytics via `gatsby-plugin-google-gtag`
 - Deployed on Netlify (`gatsby-adapter-netlify`)
 
 ## Structure
@@ -28,7 +27,6 @@ Content changes only touch `src/Data.ts`. Components never hard-code CV text.
 
 ```shell
 bun install          # or npm install
-cp .env.EXAMPLE .env # set ANALYTICS_MEASUREMENT_ID
 bun run develop      # http://localhost:8001
 bun run typecheck
 bun run build
