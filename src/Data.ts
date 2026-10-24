@@ -128,7 +128,7 @@ export const data = {
     {
       title: "Improving ETL & Analytics",
       text: `Previous sales dashboard took longer to response. I rebuild the ETL pipelines using pre-aggregating data.
-       It boosted dashboard performance for 100k+ records over year, delivering analytics with near-instant responsiveness.`,
+       It boosted dashboard performance for 1M+ records over year, delivering analytics with near-instant responsiveness.`,
     },
     {
       title: "Revolutionizing PDF Creation for Clarity and Ease",
@@ -163,7 +163,7 @@ export const data = {
       company: `PT. Advotics Teknologi Global`,
       name: `Delivery Platform`,
       from: `Jul 2023`,
-      to: `present`,
+      to: `Jun 2026`,
       text: `Developed a robust Delivery Platform designed to optimize routing for multiple deliveries, effectively
        addressing complex challenges solving Traveling Salesman Problems in Fleet Management through the use of WebFlux. Enhanced the system with dynamic
         Route Management powered by AWS Lambda and streamlined Delivery Trip modules to ensure efficient logistics
@@ -185,7 +185,7 @@ export const data = {
       company: `PT. Advotics Teknologi Global`,
       name: `Business Transaction Platform`,
       from: `Sep 2019`,
-      to: `Present`,
+      to: `Jun 2026`,
       text: `Built the backbone of supply chain applications, including critical modules for Ordering, Invoice,
        Product Return, and Inventory management. Leveraged Spring Boot and Hibernate to build scalable and efficient
         systems, while implementing Clean Architecture principles to ensure maintainability, modularity, and clarity.
