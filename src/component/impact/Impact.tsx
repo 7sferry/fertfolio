@@ -16,6 +16,7 @@ const Impact = () => {
             return (
               <div className="work-entry" key={impact.title}>
                 <h3>{impact.title}</h3>
+                <span className="impact-context">{impact.context}</span>
                 <p>{impact.text}</p>
               </div>
             );

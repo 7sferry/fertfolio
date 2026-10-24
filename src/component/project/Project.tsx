@@ -6,6 +6,21 @@
 import React from "react";
 import { data } from "../../Data";
 
+type Period = { from: string; to: string };
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const toMonthIndex = (date: string) => {
+  if (date === "Present") {
+    return Number.MAX_SAFE_INTEGER;
+  }
+  const [month, year] = date.split(" ");
+  return Number(year) * 12 + MONTHS.indexOf(month);
+};
+
+const byEndDescThenStartAsc = (a: Period, b: Period) =>
+  toMonthIndex(b.to) - toMonthIndex(a.to) || toMonthIndex(a.from) - toMonthIndex(b.from);
+
 const Project = () => {
   return (
     <section id="projects" className="experience">
@@ -25,7 +40,7 @@ const Project = () => {
                 {experience.summary && <p className="experience-summary">{experience.summary}</p>}
                 {experience.projects.length > 0 && (
                   <div className="experience-projects">
-                    {experience.projects.map((project) => {
+                    {[...experience.projects].sort(byEndDescThenStartAsc).map((project) => {
                       return (
                         <div className="timeline-project" key={project.name}>
                           <div className="project-header">
