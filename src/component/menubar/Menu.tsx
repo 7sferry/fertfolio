@@ -4,6 +4,7 @@
  ************************/
 
 import React from "react";
+import DarkModeToggle from "../DarkModeToggle";
 
 const Menu = () => {
   return (
@@ -17,17 +18,20 @@ const Menu = () => {
           aria-label="Home"
         ></a>
       </div>
-      <div className="menu-links">
-        <a href="#about-me">About Me</a>
-        <a href="#projects">Experience</a>
-        <a href="#impact">Impact</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact-me">Contact</a>
-      </div>
-      <div className="burger" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className="nav-right">
+        <div className="menu-links">
+          <a href="#about-me">About Me</a>
+          <a href="#projects">Experience</a>
+          <a href="#impact">Impact</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact-me">Contact</a>
+        </div>
+        <DarkModeToggle />
+        <div className="burger" onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </nav>
   );

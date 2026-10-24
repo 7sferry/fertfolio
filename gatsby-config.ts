@@ -91,6 +91,9 @@ const config: GatsbyConfig = {
         // printRejected: true, // Print removed selectors and processed file names
         develop: true, // Enable while using `gatsby develop`
         ignore: ["/ignored"], // Ignore files/folders
+        purgeCSSOptions: {
+          safelist: { greedy: [/data-theme/] },
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

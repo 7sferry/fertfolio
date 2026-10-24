@@ -4,29 +4,41 @@
  ************************/
 
 import React, { useEffect, useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
+
+type Theme = "light" | "dark";
+
+export const THEME_STORAGE_KEY = "theme";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState<Theme | null>(null);
 
   useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    if (savedMode === "true") {
-      setDarkMode(true);
-    }
+    setTheme(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
   }, []);
 
-  // Toggle dark mode and save preference in localStorage
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => {
-      document.body.classList.toggle("dark-mode");
-      const newMode = !prevMode;
-      localStorage.setItem("darkMode", String(newMode)); // Save preference
-      return newMode;
-    });
+  const toggleTheme = () => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    setTheme(next);
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, next);
+    } catch {}
   };
+
+  const label = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+
   return (
-    <button className="dark-mode-toggle" id="darkModeToggle"
-            onClick={toggleDarkMode}>{darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}</button>
+    <button
+      type="button"
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label={label}
+      title={label}
+      style={{ visibility: theme ? "visible" : "hidden" }}
+    >
+      {theme === "dark" ? <FaSun /> : <FaMoon />}
+    </button>
   );
 };
 
