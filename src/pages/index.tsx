@@ -23,7 +23,6 @@ function IndexPage() {
         <Contact />
       </main>
       <Footer />
-      {/*<DarkModeToggle/>*/}
     </>
   );
 }

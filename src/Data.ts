@@ -53,7 +53,7 @@ export const data = {
       name: "GitHub",
       icon: FaGithub,
       url: "https://github.com/7sferry",
-      color: "black",
+      color: "currentColor",
     },
     {
       name: "StackOverflow",
