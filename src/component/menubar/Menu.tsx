@@ -21,7 +21,7 @@ const Menu = () => {
         <a href="#about-me">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#personality">Personality</a>
+        <a href="#impact">Impact</a>
         <a href="#contact-me">Contact</a>
       </div>
       <div className="burger" onClick={toggleMenu}>

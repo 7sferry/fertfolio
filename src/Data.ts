@@ -7,22 +7,22 @@ import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react
 export const data = {
   siteConfig: {
     realName: "Ferry Suhandri",
-    role: "Software Development Engineer",
-    tagline: "Crafting code, shaping solutions",
+    role: "Senior Associate Software Development Engineer",
+    tagline: "Java backend · supply-chain & delivery routing · data consistency · performance",
     description:
-      "Online CV for Software Engineer made by Ferry Suhandri who experienced with Java, Spring Boot, Design Pattern, Programming Principle, and Clean Code Architecture",
+      "Ferry Suhandri, Java backend engineer: supply-chain transaction systems, delivery route optimization with jsprit, concurrency fixes and performance work. Senior Associate Software Development Engineer at NTT DATA.",
     metaUrl: "https://ferry.netlify.app",
     repo: "7sferry/fertfolio",
   },
-  lang: "id",
+  lang: "en",
   about: {
-    text: `I'm a Software Engineer who thrives on crafting elegant, efficient solutions. With expertise
-          in Java, Spring Boot, Hibernate, SQL, and OOP, I transform complex code into clean,
-          maintainable art. Unit testing? Absolutely, I believe in bulletproofing code to keep it
-          reliable. I’m constantly learning and researching to stay ahead of the curve. My
-          passion? Taking tangled codebases and refactoring them with design
-          patterns and any principles that fits, ensuring they’re as readable as your favorite book and as
-          maintainable as a fine-tuned machine. If it’s about making code better, I'm all in!`,
+    text: `Java backend engineer, currently Senior Associate Software Development Engineer at NTT DATA (since September
+          2026). Before that I spent nearly seven years at Advotics building supply-chain systems (ordering, invoicing,
+          returns, inventory) and, on my own, rewrote its delivery-routing engine using jsprit, AWS Lambda and Spring
+          WebFlux. I also reviewed code and mentored 3–5 junior engineers there. My best work is making existing systems
+          correct and fast: fixing lost-update and write-skew anomalies, cutting a 60s+ API to under 1s by removing N+1
+          queries and blocking calls, and introducing a >90% unit-test coverage bar for new endpoints that became the
+          team standard.`,
   },
   contacts: [
     {
@@ -64,247 +64,197 @@ export const data = {
   ],
   impacts: [
     {
-      title: "Refactoring Legacy Code to Clean Structure",
-      text: `Faced with a legacy codebase that was challenging to develop and maintain, I took the
-              initiative
-              to refactor it into a clean, modular structure. By implementing centralized exception
-              handling,
-              request validation, programming to interfaces, and dependency injection, I transformed the
-              code
-              into a more maintainable and readable state. This resulted in enhanced development
-              efficiency
-              and improved code quality across the system.`,
+      title: "Rewrote Delivery Routing as a Standalone Engine",
+      text: `Rewrote the delivery-plan routing out of the legacy delivery service, working alone. A planner picks 100–300
+          orders, and the engine assigns them to vehicles and orders the stops using jsprit. One vehicle can pick up from
+          several warehouses and deliver to several customers, within customer time windows and vehicle-skill
+          constraints. The solver and distance-matrix building run on AWS Lambda when the planner clicks Generate,
+          10–100 times a day.`,
     },
     {
-      title: "Resolving Concurrency Issues",
-      text: `Encountered data anomalies due to concurrency problems like Lost Updates and Write Skew. To
-              address this, I introduced optimized solutions such as strategic locking mechanisms and
-              improved
-              transaction isolation levels. These efforts successfully eliminated the anomalies, ensuring
-              data
-              consistency and reliability throughout the system.`,
+      title: "Cut the Route-Planning Data API from 60s+ to Under 1s",
+      text: `The API that loads data for route planning took over 60 seconds because of N+1 queries, slow SQL and
+          sequential blocking calls. I removed the N+1 pattern, rewrote the slow queries and moved the remaining calls to
+          non-blocking Spring WebFlux. Response time dropped to under 1 second.`,
     },
     {
-      title: "Migrating Messaging Queue Infrastructure",
-      text: `Previous messaging infrastructure was AWS SQS, charged per-request by AWS. I migrated it to Redis Stream.
-      This reduced infrastructure cost from per-request charges to our dedicated Redis instance`,
+      title: "Replaced AWS SQS with Redis Streams",
+      text: `Moved our message queue from AWS SQS to Redis Streams on the Redis instance we already ran, then shut down SQS
+          entirely, removing a pay-per-request service at no added infrastructure cost. Consumers use consumer groups and
+          acknowledge only after successful processing. A scheduler retries failed messages, and those that keep failing
+          go to a dead-letter stream.`,
     },
     {
-      title: "Elevating API Efficiency with Reactive Refactoring",
-      text: `Identified a severed API performance bottlenecks. I resolved it by transforming sluggish query and heavy 
-      blocking calls into efficient non-blocking processes. Slashing response times from 60s+ to <1s`,
+      title: "Fixed Lost Updates and Write Skew",
+      text: `Concurrent requests were causing lost updates and write skew, which led to inconsistent data. I made
+          optimistic locking with version columns the default for lost updates. For the write-skew cases in the Delivery
+          Platform, where conflicts were frequent, I used SERIALIZABLE isolation instead. The anomalies stopped.`,
     },
     {
-      title: "Customizable Client Behaviors with Design Patterns",
-      text: `Dealt with the challenge of diverse client behavior requirements, I implemented design
-              patterns
-              such as Strategy, Command, and Factory Method. This solution provided each client with the
-              flexibility to choose and utilize their desired behavior seamlessly.`,
+      title: "Built a Custom Transaction Manager with Spring AOP",
+      text: `The legacy code didn't use Spring Data JPA, so @Transactional wasn't available. I wrote a custom
+          transactional annotation with AOP and ThreadLocal that handles atomicity, isolation and retry on failure,
+          matching Spring's built-in behavior.`,
     },
     {
-      title: "Optimizing Pagination for Faster Load Times",
-      text: `To address slow load times with numeric pagination, I revamped the filtering strategy to
-              focus on
-              date-based filters and implemented a "load more" pagination approach. This significantly
-              reduced
-              page load times and improved the overall user experience.`,
+      title: "Introduced a >90% Coverage Standard for New Endpoints",
+      text: `Services had 0–30% unit-test coverage, partly because hidden dependencies made them hard to mock. I refactored
+          them to dependency injection, introduced a >90% JUnit/Mockito coverage bar for new endpoints, and it became the
+          team standard.`,
     },
     {
-      title: "Enhancing Transaction Management with Custom Annotation",
-      text: `Legacy code lacked Spring Data JPA, making atomic transactions more complex than using the
-              simple
-              @Transactional annotation. I developed a custom transactional annotation using AOP, enabling
-              centralized management of atomicity using ThreadLocal, isolation, and retryable transactions in the event of
-              failures, replicating the behavior of Spring’s built-in transaction management.`,
+      title: "Cut Sales-Dashboard Response from Over a Minute to Under 500 ms",
+      text: `Rebuilt the sales-dashboard ETL to pre-aggregate data instead of querying raw transactions. Dashboards for our
+          largest client, with 1M+ records per year, went from over a minute to under 500 ms.`,
     },
     {
-      title: "Simplifying Unit Testing with Dependency Injection",
-      text: `Some parts of the code were difficult to test due to hidden dependencies. I refactored the
-              code
-              to use dependency injection, making it easier to mock dependencies in unit tests and
-              improving
-              testability & maintainability and increasing code coverages >90%.`,
+      title: "Refactored Legacy Code to a Modular Structure",
+      text: `Refactored hard-to-maintain legacy modules with centralized exception handling, request validation,
+          programming to interfaces and dependency injection.`,
     },
     {
-      title: "Improving ETL & Analytics",
-      text: `Previous sales dashboard took longer to response. I rebuild the ETL pipelines using pre-aggregating data.
-       It boosted dashboard performance for 1M+ records over year, delivering analytics with near-instant responsiveness.`,
-    },
-    {
-      title: "Revolutionizing PDF Creation for Clarity and Ease",
-      text: `Maintained a difficult-to-read PDF creator using OOP style, I migrated the system to an HTML-based
-       solution. This transition simplified the process, allowing future PDF creation tasks to be handled easily by
-        designing layouts with HTML and CSS, just like a webpage, ensuring clarity and flexibility in design.`,
+      title: "Per-Client Behavior with Design Patterns",
+      text: `Clients needed different behavior for the same features. I used Strategy, Command and Factory Method so each
+          client can be configured with its own behavior without branching the core code.`,
     },
   ],
-  personalities: [
+  experiences: [
     {
-      title: `Big Five`,
-      text: `Openness: 37%, Conscientiousness: 81%, Extraversion: 3%, Agreeableness: 3%, Neuroticism: 57%. A balance of
-       thoughtfulness, diligence, and introspection.`,
-    },
-    {
-      title: `Conscientious (DiSC)`,
-      text: `Analytical and focused, I prioritize efficiency and clarity, delivering solutions that are effective and
-              sustainable.`,
-    },
-    {
-      title: `ISTJ (Myers-Briggs)`,
-      text: `Methodical, detail-oriented, and precise, I approach problems with logical and structured solutions.`,
-    },
-    {
-      title: `Type 5 (Enneagram)`,
-      text: `A thinker and learner, I thrive on acquiring knowledge, diving deep into complex topics to understand and
-              innovate.`,
-    },
-  ],
-  projects: [
-    {
-      company: `PT. Advotics Teknologi Global`,
-      name: `Delivery Platform`,
-      from: `Jul 2023`,
-      to: `Jun 2026`,
-      text: `Developed a robust Delivery Platform designed to optimize routing for multiple deliveries, effectively
-       addressing complex challenges solving Traveling Salesman Problems in Fleet Management through the use of WebFlux. Enhanced the system with dynamic
-        Route Management powered by AWS Lambda and streamlined Delivery Trip modules to ensure efficient logistics
-         operations and scalability. The platform significantly improved delivery efficiency, reduced operational costs,
-          and facilitated seamless fleet coordination.`,
+      company: `NTT DATA`,
+      title: `Senior Associate Software Development Engineer`,
+      from: `Sep 2026`,
+      to: `Present`,
+      summary: ``,
+      projects: [],
     },
     {
       company: `PT. Advotics Teknologi Global`,
-      name: `KPI Platform`,
-      from: `Jun 2022`,
-      to: `Jun 2023`,
-      text: `Enhanced a comprehensive KPI calculator module for Sales, designed to accurately track and evaluate
-       performance metrics. Developed an accompanying library to simplify implementation and accelerate future
-        development processes, ensuring consistent functionality and reducing development overhead. This solution
-         enhanced data accuracy, streamlined reporting, and provided developers with reusable, modular tools for
-          efficient integration into various projects.`,
-    },
-    {
-      company: `PT. Advotics Teknologi Global`,
-      name: `Business Transaction Platform`,
+      title: `Software Development Engineer`,
       from: `Sep 2019`,
       to: `Jun 2026`,
-      text: `Built the backbone of supply chain applications, including critical modules for Ordering, Invoice,
-       Product Return, and Inventory management. Leveraged Spring Boot and Hibernate to build scalable and efficient
-        systems, while implementing Clean Architecture principles to ensure maintainability, modularity, and clarity.
-         These enhancements streamlined operations, improved data accuracy, and facilitated seamless integration across
-          the supply chain ecosystem.`,
+      summary: `Reviewed code and mentored 3–5 junior engineers. Introduced a >90% unit-test coverage bar for new endpoints
+          that became the team standard.`,
+      projects: [
+        {
+          name: `Delivery Platform`,
+          from: `Jul 2023`,
+          to: `Jun 2026`,
+          text: `Rewrote the delivery-plan routing out of the legacy delivery service into a standalone engine, working
+              alone. It uses jsprit on AWS Lambda for vehicle routing with multiple vehicles, warehouses, time windows and
+              vehicle skills, and Spring WebFlux for the data-loading API, which I cut from 60s+ to under 1s. Also built
+              the Delivery Trip module.`,
+        },
+        {
+          name: `KPI Platform`,
+          from: `Jun 2022`,
+          to: `Jun 2023`,
+          text: `Enhanced the KPI calculator module that tracks sales performance metrics, and built an accompanying
+              library so later KPI features reuse the same calculation logic.`,
+        },
+        {
+          name: `Business Transaction Platform`,
+          from: `Sep 2019`,
+          to: `Jun 2026`,
+          text: `Backend for Advotics' supply-chain modules: Ordering, Invoice, Product Return and Inventory (Spring Boot,
+              Hibernate, SQL), owned together by a team of 3–10 engineers over the years. My own contributions included
+              fixing the concurrency anomalies, building the AOP transaction manager, and refactoring legacy parts for
+              testability.`,
+        },
+      ],
     },
     {
       company: `PT. Pradipta Jatis Indonesia`,
-      name: `Permodalan Nasional Madani Investment Management`,
-      from: `May 2019`,
-      to: `Aug 2019`,
-      text: `Faced with a tight deadline to develop a Mutual Funds app for Permodalan Nasional Madani Investasi Management,
-       I collaborated with the team despite none of us having prior experience with Groovy or Grails. We embraced the
-        challenge by learning Groovy and Grails on the go while actively developing the application. Despite the steep
-         learning curve, we successfully launched the app, delivering it on time and meeting the project’s requirements.`,
-    },
-    {
-      company: `PT. Pradipta Jatis Indonesia`,
-      name: `Alfacart Back Office`,
-      from: `Dec 2018`,
-      to: `Apr 2019`,
-      text: `Deployed to replace a colleague at Alfacart, I was tasked with improving their back office apps as a
-       full-stack solution, utilizing Java for backend processes and vanilla JavaScript for the frontend interface.
-        One challenge involved implementing a discount period feature that couldn’t overlap. Upon reviewing the
-         database, I discovered PostgreSQL’s "overlap" keyword, which allowed me to simplify the logic significantly.
-          By leveraging this feature, I eliminated the need for complex manual checks, resulting in a cleaner and more
-           efficient query for handling overlapping discount periods.`,
-    },
-    {
-      company: `PT. Pradipta Jatis Indonesia`,
-      name: `Ultra Voucher`,
-      from: `Oct 2018`,
-      to: `Nov 2018`,
-      text: `Assigned to assist Ultra Voucher, a newly formed startup, I worked with Java, Spring, and MyBatis to
-       implement a feature that allowed customers to make multiple payments for a single product. This feature enabled
-        customers to divide their payments across multiple payment accounts, offering greater flexibility and
-         convenience. I successfully delivered the solution on time, enhancing the user experience and streamlining the
-          payment process for the platform.`,
-    },
-    {
-      company: `PT. Pradipta Jatis Indonesia`,
-      name: `Novo Nordisk Indonesia`,
-      from: `Jun 2018`,
-      to: `Sep 2018`,
-      text: `Designed and developed a web service API for Novo Nordisk's sales dashboard and analytics platform,
-       enabling data visualization and insights. The API streamlined data processing, and enhanced reporting accuracy.
-       Despite some significant adjustments on-the-go, we swiftly adapted by modifying the code and database, ensuring
-        that the solution met the updated needs`,
-    },
-    {
-      company: `PT. Pradipta Jatis Indonesia`,
-      name: `Betterway`,
+      title: `Associate Business Technologist (software engineer, client projects)`,
       from: `Jan 2018`,
-      to: `May 2018`,
-      text: `For our client Betterway from the Philippines, I collaborated with my team to develop a mobile e-commerce
-       app within a 5-month timeline. Despite the challenges, we maintained a strong focus on quality and functionality
-        throughout the development process. The project culminated in a successful product launch, with the app going
-         live as planned.`,
+      to: `Aug 2019`,
+      summary: ``,
+      projects: [
+        {
+          name: `Permodalan Nasional Madani Investment Management`,
+          from: `May 2019`,
+          to: `Aug 2019`,
+          text: `Built a mutual funds app on a tight deadline in Groovy and Grails, which nobody on the team had used
+              before. We learned the stack while building and launched on time.`,
+        },
+        {
+          name: `Alfacart Back Office`,
+          from: `Dec 2018`,
+          to: `Apr 2019`,
+          text: `Full-stack work on back-office apps (Java backend, vanilla JavaScript frontend). Implemented discount
+              periods that must not overlap using PostgreSQL's OVERLAPS operator, replacing complex manual checks with a
+              single query.`,
+        },
+        {
+          name: `Ultra Voucher`,
+          from: `Oct 2018`,
+          to: `Nov 2018`,
+          text: `Implemented split payment with Java, Spring and MyBatis, letting customers pay for one product across
+              multiple payment accounts. Delivered on time.`,
+        },
+        {
+          name: `Novo Nordisk Indonesia`,
+          from: `Jun 2018`,
+          to: `Sep 2018`,
+          text: `Designed and developed the web service API for a sales dashboard and analytics platform, adapting the
+              code and database to significant requirement changes mid-project.`,
+        },
+        {
+          name: `Betterway`,
+          from: `Jan 2018`,
+          to: `May 2018`,
+          text: `Team member on a mobile e-commerce app for a client in the Philippines, built and launched within a
+              5-month timeline.`,
+        },
+      ],
     },
     {
       company: `PT. Indivara Sejahtera Sukses Makmur`,
-      name: `Java Development Trainee`,
+      title: `Java Development Trainee`,
       from: `Aug 2017`,
       to: `Dec 2017`,
-      text: `Completed intensive training in both soft and hard skills, with a focus on Java, its
-              frameworks, basic JavaScript, and the latest technologies, ranging from basic to advanced levels. I also
-              undertook on-the-job training as a graduate programmer. During this time, I deepened my
-              understanding of Design Patterns and advanced my knowledge of various coding principles.`,
+      summary: `Intensive Java training covering frameworks, basic JavaScript, design patterns and coding principles,
+          followed by on-the-job training as a graduate programmer.`,
+      projects: [],
     },
   ],
   skills: [
     {
-      emoji: `👨‍💻`,
-      name: `Programming`,
-      text: `I primarily work with Java in my projects, but I also have experience with
-                JavaScript/TypeScript. To me, programming languages or frameworks are just tools; I'm always
-                open and eager to learn and master new ones as needed.`,
+      emoji: `☕`,
+      name: `Languages`,
+      text: `Java (primary), SQL, TypeScript/JavaScript, Groovy.`,
     },
     {
-      emoji: `📚`,
-      name: `Learning`,
-      text: `Driven by curiosity and a passion for innovation, I constantly seek
-                opportunities to expand my knowledge and apply cutting-edge solutions to improve
-                software development. This proactive approach ensures I stay ahead of trends and
-                share valuable insights to any team.`,
+      emoji: `🧩`,
+      name: `Frameworks`,
+      text: `Spring Boot, Spring WebFlux, Spring AOP, Hibernate, MyBatis, Grails.`,
+    },
+    {
+      emoji: `🗄️`,
+      name: `Data & Messaging`,
+      text: `PostgreSQL, Redis Streams, AWS SQS, transaction isolation and locking, ETL pre-aggregation.`,
+    },
+    {
+      emoji: `☁️`,
+      name: `Cloud & Optimization`,
+      text: `AWS Lambda, jsprit (vehicle routing with time windows and skills).`,
     },
     {
       emoji: `🧪`,
-      name: `Unit Testing`,
-      text: `Skilled in writing thorough unit tests using JUnit and Mockito, I prioritize ensuring
-                code reliability and maintainability. My focus on testing drives higher quality, reduces
-                bugs, and ensures that code performs as expected, ultimately contributing to more stable
-                and efficient software.`,
+      name: `Testing`,
+      text: `JUnit, Mockito, dependency injection for testability, >90% coverage on new endpoints.`,
     },
     {
       emoji: `🛠️`,
-      name: `Design Patterns`,
-      text: `With extensive experience in applying effective design patterns, I ensure that code
-                remains clean, scalable, and easy to maintain. By leveraging proven architectural
-                principles, I create solutions that stand the test of time and facilitate smooth,
-                long-term project growth.`,
+      name: `Design`,
+      text: `Design patterns (Strategy, Command, Factory Method), clean architecture, refactoring legacy code.`,
     },
     {
       emoji: `🌍`,
       name: `English`,
-      text: `I have good business-level English proficiency, ensuring effective collaboration and
-                clear, concise documentation. This ability helps bridge technical and non-technical
-                discussions, promoting smooth workflows and successful project outcomes.`,
-    },
-    {
-      emoji: `🔍`,
-      name: `Detail-Oriented`,
-      text: `My meticulous attention to detail ensures that every aspect of a project, from initial
-                design to final testing, adheres to the highest quality standards. I consistently refine
-                and optimize each element, ensuring flawless execution and delivering exceptional
-                results that exceed expectations.`,
+      text: `Business-level English for documentation and day-to-day collaboration.`,
     },
   ],
   footer: {
-    text: "Crafted with passion and precision",
+    text: "Built with Gatsby",
   },
 };

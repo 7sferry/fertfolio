@@ -9,7 +9,6 @@ import Impact from "../component/impact/Impact";
 import Contact from "../component/contact/Contact";
 import Footer from "../component/footer/Footer";
 import Seo from "../component/Seo";
-import Personality from "../component/personality/Personality";
 
 function IndexPage() {
   return (
@@ -21,7 +20,6 @@ function IndexPage() {
         <Skill />
         <Project />
         <Impact />
-        <Personality />
         <Contact />
       </main>
       <Footer />
