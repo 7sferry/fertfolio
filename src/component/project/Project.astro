@@ -1,0 +1,59 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { data } from "../../Data";
+import SectionTitle from "../SectionTitle.astro";
+
+type Period = { from: string; to: string };
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const toMonthIndex = (date: string) => {
+  if (date === "Present") {
+    return Number.MAX_SAFE_INTEGER;
+  }
+  const [month, year] = date.split(" ");
+  return Number(year) * 12 + MONTHS.indexOf(month);
+};
+
+const byEndDescThenStartAsc = (a: Period, b: Period) =>
+  toMonthIndex(b.to) - toMonthIndex(a.to) || toMonthIndex(a.from) - toMonthIndex(b.from);
+---
+
+<section id="projects" class="experience">
+  <div class="container">
+    <SectionTitle id="projects">Experience</SectionTitle>
+    <div class="timeline">
+      {data.experiences.map((experience) => (
+        <div class="timeline-item">
+          <div class="experience-header">
+            <h3 class="experience-company">{experience.company}</h3>
+            <span class="experience-date">
+              {experience.from} - {experience.to}
+            </span>
+          </div>
+          <p class="experience-role">{experience.title}</p>
+          {experience.summary && <p class="experience-summary">{experience.summary}</p>}
+          {experience.projects.length > 0 && (
+            <div class="experience-projects">
+              {[...experience.projects].sort(byEndDescThenStartAsc).map((project) => (
+                <div class="timeline-project">
+                  <div class="project-header">
+                    <h4 class="project-name">{project.name}</h4>
+                    <span class="project-date">
+                      {project.from} - {project.to}
+                    </span>
+                  </div>
+                  <p class="project-text">{project.text}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

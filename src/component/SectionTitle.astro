@@ -1,0 +1,19 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on Oktober 2026      *
+ ************************/
+
+interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<h2 class={className}>
+  <a href={`#${id}`} class="section-anchor">
+    <slot />
+  </a>
+</h2>

@@ -97,10 +97,9 @@ section {
 }
 
 .about img {
-    float: left;
-    margin-right: 1rem;
-    width: 225px;
-    height: 225px;
+    display: block;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -234,6 +233,15 @@ nav {
 .theme-toggle:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+.theme-toggle .icon-sun,
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+    display: inline;
 }
 
 .burger {
@@ -548,6 +556,8 @@ nav {
 
     .about img {
         margin: auto;
+        width: 225px;
+        height: 225px;
     }
 }
 

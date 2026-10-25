@@ -2,7 +2,6 @@
  * Made by [MR Ferry™]  *
  * on November 2024     *
  ************************/
-import { FaBlog, FaEnvelope, FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
 export const data = {
   siteConfig: {
@@ -25,37 +24,37 @@ export const data = {
   contacts: [
     {
       name: "LinkedIn",
-      icon: FaLinkedin,
+      icon: "fa-brands:linkedin",
       url: "https://www.linkedin.com/in/7sferry",
       color: "#0a66c2",
     },
     // {
     //   name: "WhatsApp",
-    //   icon: faWhatsapp,
+    //   icon: "fa-brands:whatsapp",
     //   url: "https://wa.me/+6282212345678",
     //   color: "#25D366",
     // },
     {
       name: "Email",
-      icon: FaEnvelope,
+      icon: "fa-solid:envelope",
       url: "mailto:7sferry@gmail.com",
       color: "#DB4437",
     },
     {
       name: "Blog",
-      icon: FaBlog,
+      icon: "fa-solid:blog",
       url: "https://ferry.vercel.app",
       color: "#FF00BF",
     },
     {
       name: "GitHub",
-      icon: FaGithub,
+      icon: "fa-brands:github",
       url: "https://github.com/7sferry",
       color: "currentColor",
     },
     {
       name: "StackOverflow",
-      icon: FaStackOverflow,
+      icon: "fa-brands:stack-overflow",
       url: "https://stackoverflow.com/users/14286378/ferry",
       color: "#ef8236",
     },
@@ -342,6 +341,6 @@ export const data = {
     },
   ],
   footer: {
-    text: "Built with Gatsby",
+    text: "Built with Astro",
   },
 };

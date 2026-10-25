@@ -1,3 +1,17 @@
+[build]
+command = "bun run build"
+publish = "dist"
+
+[[headers]]
+for = "/_astro/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/sw.js"
+[headers.values]
+Cache-Control = "no-cache"
+
 [[redirects]]
 from = "/resume"
 to = "/"

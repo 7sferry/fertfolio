@@ -1,0 +1,25 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { Icon } from "astro-icon/components";
+import { data } from "../../Data";
+import SectionTitle from "../SectionTitle.astro";
+---
+
+<section id="contact-me" class="contact">
+  <div class="container">
+    <SectionTitle id="contact-me">Contact Me</SectionTitle>
+    <p>Feel free to reach out to me through any of the following channels:</p>
+    <div class="contact-links">
+      {data.contacts.map((contact) => (
+        <a href={contact.url} class="contact-item" target="_blank">
+          <Icon name={contact.icon} size={26} style={`color: ${contact.color}`} />
+          {contact.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

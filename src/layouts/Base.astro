@@ -1,0 +1,38 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on October 2026      *
+ ************************/
+
+import "../styles/index.css";
+import nunitoUrl from "@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2?url";
+import Seo from "../component/Seo.astro";
+import { data } from "../Data";
+import { THEME_STORAGE_KEY } from "../theme";
+
+const pageTitle = `${data.siteConfig.realName} | ${data.siteConfig.role}`;
+---
+
+<!doctype html>
+<html lang={data.lang}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script is:inline define:vars={{ key: THEME_STORAGE_KEY }}>
+      try {
+        if (localStorage.getItem(key) === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
+    <link rel="preload" href={nunitoUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicons/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/favicons/android-chrome-512x512.png" />
+    <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <Seo />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
