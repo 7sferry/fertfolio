@@ -16,13 +16,11 @@ export const data = {
   },
   lang: "en",
   about: {
-    text: `Java backend engineer, currently Senior Associate Software Development Engineer at NTT DATA. Before that I
-          spent nearly seven years at Advotics building supply-chain systems (ordering, invoicing, returns, inventory)
-          and, on my own, rewrote its delivery-routing engine using jsprit, AWS Lambda and Spring WebFlux. I also
-          reviewed code and mentored junior engineers there. My best work is making existing systems correct and fast:
-          fixing lost-update and write-skew anomalies, cutting a 60s+ API to under 1s by removing N+1 queries and
-          blocking calls, and holding new code above 90% unit-test coverage, a bar the team then adopted as its
-          standard.`,
+    text: `I'm a Software Engineer with 8+ years of experience, at my best on the hard parts of production systems:
+          keeping data correct under concurrency, speeding up slow endpoints and safely changing legacy code. I fix
+          root causes, from write-skew bugs unnoticed for years to a 60s+ API cut to under 1s. On my own, I rewrote a
+          delivery-routing engine with jsprit, AWS Lambda and Spring WebFlux, and several tools I built became team
+          standards. I keep my code above 90% test coverage and mentor juniors.`,
   },
   contacts: [
     {
