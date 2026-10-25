@@ -5,12 +5,13 @@
 
 import React from "react";
 import { data } from "../../Data";
+import SectionTitle from "../SectionTitle";
 
 const Skill = () => {
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <h2>Skills</h2>
+        <SectionTitle id="skills">Skills</SectionTitle>
         <div className="grid">
           {data.skills.map((skill) => {
             return (

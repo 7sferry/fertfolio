@@ -16,8 +16,8 @@ const getPhotoBio = (): IGatsbyImageData => {
             placeholder: DOMINANT_COLOR
             layout: CONSTRAINED
             outputPixelDensities: [1]
-            width: 225
-            height: 225
+            width: 200
+            height: 200
           )
         }
       }

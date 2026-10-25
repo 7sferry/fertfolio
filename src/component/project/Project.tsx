@@ -5,6 +5,7 @@
 
 import React from "react";
 import { data } from "../../Data";
+import SectionTitle from "../SectionTitle";
 
 type Period = { from: string; to: string };
 
@@ -25,7 +26,7 @@ const Project = () => {
   return (
     <section id="projects" className="experience">
       <div className="container">
-        <h2>Experience</h2>
+        <SectionTitle id="projects">Experience</SectionTitle>
         <div className="timeline">
           {data.experiences.map((experience) => {
             return (

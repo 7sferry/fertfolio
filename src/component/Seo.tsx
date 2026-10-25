@@ -15,23 +15,6 @@ export default function Seo() {
   const cardImagePath = `ferry-suhandri-large2.jpg`;
   const imageUrl = `${data.siteConfig.metaUrl}/${cardImagePath}`;
   const pageTitle = `${data.siteConfig.realName} | ${data.siteConfig.role}`;
-  const keywords = [
-    data.siteConfig.realName,
-    data.siteConfig.role,
-    "Software Engineer Portfolio",
-    "Java Developer",
-    "Spring Boot",
-    "Spring WebFlux",
-    "Hibernate",
-    "Backend Engineer",
-    "Vehicle Routing",
-    "jsprit",
-    "Redis Streams",
-    "AWS Lambda",
-    "Design Patterns",
-    "Online CV",
-    "Resume",
-  ].join(", ");
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -73,7 +56,6 @@ export default function Seo() {
       <html lang={data.lang} />
       <title>{pageTitle}</title>
       <meta name="description" content={data.siteConfig.description} />
-      <meta name="keywords" content={keywords} />
       <meta name="author" content={data.siteConfig.realName} />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />

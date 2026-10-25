@@ -5,12 +5,13 @@
 
 import React from "react";
 import { data } from "../../Data";
+import SectionTitle from "../SectionTitle";
 
 const Impact = () => {
   return (
     <section id="impact" className="impactful-works">
       <div className="container">
-        <h2>Impactful Works</h2>
+        <SectionTitle id="impact">Impactful Works</SectionTitle>
         <div className="works">
           {data.impacts.map((impact) => {
             return (

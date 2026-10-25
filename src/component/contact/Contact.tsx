@@ -5,12 +5,13 @@
 
 import React from "react";
 import { data } from "../../Data";
+import SectionTitle from "../SectionTitle";
 
 const Contact = () => {
   return (
     <section id="contact-me" className="contact">
       <div className="container">
-        <h2>Contact Me</h2>
+        <SectionTitle id="contact-me">Contact Me</SectionTitle>
         <p>Feel free to reach out to me through any of the following channels:</p>
         <div className="contact-links">
           {data.contacts.map((contact) => {
