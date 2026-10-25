@@ -142,6 +142,17 @@ export const data = {
           SQS scheduled for shutdown.`,
     },
     {
+      title: "Cut the Page with Pagination from 5s+ to Around 100 ms",
+      context: "Advotics · Business Transaction Platform",
+      text: `The Page with Pagination in production suddenly took 5 seconds or more to load. It used numeric pagination: a
+          COUNT(*) over every matching order to show the page count, plus a LIMIT/OFFSET query that gets more expensive
+          the deeper the page. I gave the product manager three options with their trade-offs: a date-range filter, a
+          "load more" button that skips the count entirely, and cursor-based paging that filters by the last ID shown
+          instead of using OFFSET. They chose the date-range filter because it needed the least development and no UI/UX
+          change, and we capped the range at 31 days, so each request only counts and pages through one month of orders
+          at most. Load time dropped to around 100 ms.`,
+    },
+    {
       title: "Cut PDF Feature Effort from 13 to 2–5 Story Points",
       context: "Advotics · Business Transaction Platform",
       text: `Each new PDF built with the iText API took about 13 story points, and complex invoices (merged cells, dashed
