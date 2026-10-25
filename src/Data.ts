@@ -8,7 +8,7 @@ export const data = {
   siteConfig: {
     realName: "Ferry Suhandri",
     role: "Senior Software Development Engineer",
-    tagline: "Java backend · supply-chain & delivery routing · data consistency · SaaS multitenancy",
+    tagline: "Make it correct, then make it fast",
     description:
       "Ferry Suhandri, Java backend engineer: supply-chain transaction systems, delivery route optimization with jsprit, concurrency fixes and performance work. Senior Associate Software Development Engineer at NTT DATA.",
     metaUrl: "https://ferry.netlify.app",
