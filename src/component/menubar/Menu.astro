@@ -1,0 +1,38 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { Icon } from "astro-icon/components";
+import ThemeToggle from "../ThemeToggle.astro";
+---
+
+<nav>
+  <div class="logo">
+    <a href="/#" aria-label="Home">
+      <Icon name="logo" />
+    </a>
+  </div>
+  <div class="nav-right">
+    <div class="menu-links">
+      <a href="#about-me">About Me</a>
+      <a href="#projects">Experience</a>
+      <a href="#impact">Impact</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact-me">Contact</a>
+    </div>
+    <ThemeToggle />
+    <div class="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.querySelector(".burger")?.addEventListener("click", () => {
+    document.querySelector(".menu-links")?.classList.toggle("show");
+  });
+</script>

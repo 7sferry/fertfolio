@@ -1,49 +1,54 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# fertfolio
 
-## 🚀 Quick start
+Source of [ferry.netlify.app](https://ferry.netlify.app), the online CV of Ferry Suhandri, a Java backend engineer.
 
-1.  **Create a Gatsby site.**
+## Stack
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+- [Astro 7](https://astro.build/), static output, TypeScript, no client framework (two small inline scripts for the theme toggle and burger menu)
+- `astro:assets` (`sharp`) for images, `@astrojs/sitemap`, `astro-purgecss`, `astro-icon` (Font Awesome via `@iconify-json/fa-solid` / `fa-brands`)
+- Deployed on Netlify as a static site (`dist/`)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+## Structure
 
-2.  **Start developing.**
+```
+src/
+  Data.ts                 all page content: header, about, impacts, experiences, skills, contacts, footer
+  pages/index.astro       section order
+  pages/404.astro         renders the home page
+  pages/manifest.webmanifest.ts, pages/robots.txt.ts   generated from Data.ts
+  layouts/Base.astro      <html>, <head>, theme init script, icons, font preload
+  styles/index.css        styles
+  component/              one component per section, each renders its slice of Data.ts
+  component/Seo.astro     meta tags, Open Graph and schema.org Person data
+  icons/                  local SVG icons for astro-icon (logo)
+  images/                 headshot and app icon sources
+  theme.ts                localStorage key for the theme
+astro.config.ts           site URL and integrations, also read from Data.ts
+scripts/generate-icons.ts regenerates favicons in public/ from src/images/icon.png
+public/                   files served as-is (favicons, social card images, site verification, sw.js)
+```
 
-    Navigate into your new site’s directory and start it up.
+Content changes only touch `src/Data.ts`. Components never hard-code CV text. Contact icons are Iconify names (`fa-brands:github`). Add new ones to the `include` list in `astro.config.ts`.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Development
 
-3.  **Open the code and start customizing!**
+```shell
+bun install          # or npm install
+bun run develop      # http://localhost:8001
+bun run typecheck    # astro check
+bun run build        # dist/
+bun run serve        # preview dist/ on http://localhost:9000
+bun run icons        # after changing src/images/icon.png
+```
 
-    Your site is now running at http://localhost:8000!
+PurgeCSS runs on `build` only, so check for missing styles with `build` + `serve`, not `develop`. Classes that only JS adds (like `show` on the mobile menu) must be safelisted in `astro.config.ts`.
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+## Deployment
 
-4.  **Learn more**
+Netlify builds `main` with `bun run build` and publishes `dist/` (`netlify.toml`). `netlify.toml` also redirects `/resume` to `/`, caches `/_astro/*` as immutable, and serves `sw.js` uncached.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+`public/sw.js` unregisters the service worker left by the old Gatsby offline plugin and clears its caches. Remove it once old visitors have had time to pick it up.
 
-## 🚀 Quick start (Netlify)
+## License
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+See [LICENSE](LICENSE).

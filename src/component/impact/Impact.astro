@@ -1,0 +1,24 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { data } from "../../Data";
+import SectionTitle from "../SectionTitle.astro";
+---
+
+<section id="impact" class="impactful-works">
+  <div class="container">
+    <SectionTitle id="impact">Impactful Works</SectionTitle>
+    <div class="works">
+      {data.impacts.map((impact) => (
+        <div class="work-entry">
+          <h3>{impact.title}</h3>
+          <span class="impact-context">{impact.context}</span>
+          <p>{impact.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

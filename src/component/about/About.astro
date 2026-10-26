@@ -1,0 +1,36 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { Picture } from "astro:assets";
+import headshot from "../../images/ferry-headshots.png";
+import { data } from "../../Data";
+import SectionTitle from "../SectionTitle.astro";
+---
+
+<section id="about-me" class="about">
+  <div class="container">
+    <SectionTitle id="about-me" class="about-me-title">
+      About Me
+    </SectionTitle>
+    <Picture
+      src={headshot}
+      formats={["avif", "webp"]}
+      fallbackFormat="jpg"
+      width={225}
+      height={225}
+      densities={[1, 2]}
+      position="attention"
+      quality={85}
+      alt="Ferry"
+      title={data.siteConfig.realName}
+      style="background-color: #b8c8e8"
+      loading="lazy"
+      decoding="async"
+      pictureAttributes={{ class: "bio-picture" }}
+    />
+    <p>{data.about.text}</p>
+  </div>
+</section>

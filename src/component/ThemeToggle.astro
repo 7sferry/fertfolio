@@ -1,0 +1,36 @@
+---
+/************************
+ * Made by [MR Ferry™]  *
+ * on November 2024     *
+ ************************/
+
+import { Icon } from "astro-icon/components";
+---
+
+<button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+  <Icon name="fa-solid:moon" class="icon-moon" width="1em" height="1em" />
+  <Icon name="fa-solid:sun" class="icon-sun" width="1em" height="1em" />
+</button>
+
+<script>
+  import { THEME_STORAGE_KEY } from "../theme";
+
+  const button = document.querySelector<HTMLButtonElement>(".theme-toggle")!;
+  const root = document.documentElement;
+
+  const syncLabel = () => {
+    const label = root.dataset.theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    button.setAttribute("aria-label", label);
+    button.title = label;
+  };
+
+  syncLabel();
+  button.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, next);
+    } catch {}
+    syncLabel();
+  });
+</script>
