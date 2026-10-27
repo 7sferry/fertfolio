@@ -12,7 +12,7 @@ import { data } from "./src/Data";
 export default defineConfig({
   site: data.siteConfig.metaUrl,
   trailingSlash: "never",
-  build: { format: "file" },
+  build: { format: "file", inlineStylesheets: "always" },
   integrations: [
     icon({
       include: {
