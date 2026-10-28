@@ -20,9 +20,13 @@ const pageTitle = `${data.siteConfig.realName} | ${data.siteConfig.role}`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <script is:inline define:vars={{ key: THEME_STORAGE_KEY }}>
+      let stored = null;
       try {
-        if (localStorage.getItem(key) === "dark") document.documentElement.dataset.theme = "dark";
+        stored = localStorage.getItem(key);
       } catch (e) {}
+      if (stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.dataset.theme = "dark";
+      }
     </script>
     <link rel="preload" href={nunitoUrl} as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon-32x32.png" type="image/png" />
