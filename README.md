@@ -47,8 +47,6 @@ PurgeCSS runs on `build` only, so check for missing styles with `build` + `serve
 
 Netlify builds `main` with `bun run build` and publishes `dist/` (`netlify.toml`). `netlify.toml` also redirects `/resume` to `/`, caches `/_astro/*` as immutable, and serves `sw.js` uncached.
 
-`public/sw.js` unregisters the service worker left by the old Gatsby offline plugin and clears its caches. Remove it once old visitors have had time to pick it up.
-
 ## License
 
 See [LICENSE](LICENSE).
